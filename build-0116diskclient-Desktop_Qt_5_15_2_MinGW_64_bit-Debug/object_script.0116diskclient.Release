@@ -1,0 +1,14 @@
+release/login.o
+release/main.o
+release/md5.o
+release/searchfile.o
+release/showsearchfile.o
+release/threadpool.o
+release/widget.o
+release/tcpnet.o
+release/tcpkernel.o
+release/moc_login.o
+release/moc_searchfile.o
+release/moc_showsearchfile.o
+release/moc_widget.o
+release/moc_tcpkernel.o
