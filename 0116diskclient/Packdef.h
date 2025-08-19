@@ -30,7 +30,7 @@
 #define _default_protocol_sharelink_rs   _default_protocol_base +16
 //提取
 #define _default_protocol_getlink_rq   _default_protocol_base +17
-#define _default_protocol_getlink_rs   _default_protocol_base +18
+#define _default_protocol_getlink_rs      _default_protocol_base+18
 
 #define _default_protocol_break_rq      _default_protocol_base+19
 #define _default_protocol_break_rs      _default_protocol_base+20
@@ -39,7 +39,10 @@
 //下载文件
 #define _default_protocol_downloadfile_rq  _default_protocol_base+22
 #define _default_protocol_downloadfile_rs  _default_protocol_base+23
-
+//提取返回头
+#define _default_protocol_getlink_head_rs   _default_protocol_base +24
+#define _default_protocol_getlink_body_rs   _default_protocol_base +25
+#define _default_protocol_getlink_tail_rs   _default_protocol_base +26
 //添加好友
 //搜索好友
 //删除好友

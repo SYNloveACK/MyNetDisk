@@ -4,9 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include"INet.h"
+#include"./json.hpp"
 #define MAXNUM   1024
 // szType 0 文件信息   1 文件内容     2 文件回复
 #include"kernel/IKernel.h"
+#include"logger.h"
+
+using json = nlohmann::json;
 class TCPNet :public INet
 {
 public:

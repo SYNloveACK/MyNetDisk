@@ -1,0 +1,48 @@
+# Qt 项目文件
+*.pro.user
+*.autosave
+
+# 构建目录和文件
+build-*/
+Debug/
+Release/
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+
+# Qt Creator
+.qtc_clangd/
+.qmake.stash
+*.pro.user.*
+
+# 编译中间文件
+moc_*
+qrc_*
+ui_*
+*.moc
+*.pch
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 备份文件
+*.orig
+*.swp
+*~
+*.bak
+
+# 日志文件
+*.log
+
+# 依赖文件
+Makefile
+*.d
+
+# 其他
+*.app
+*.ipa
+*.apk

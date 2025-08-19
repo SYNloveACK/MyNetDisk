@@ -41,6 +41,10 @@
 //下载文件
 #define _default_protocol_downloadfile_rq  _default_protocol_base+22
 #define _default_protocol_downloadfile_rs  _default_protocol_base+23
+
+#define _default_protocol_getlink_head_rs   _default_protocol_base +24
+#define _default_protocol_getlink_body_rs   _default_protocol_base +25
+#define _default_protocol_getlink_tail_rs   _default_protocol_base +26
 //添加好友
 //搜索好友
 //删除好友

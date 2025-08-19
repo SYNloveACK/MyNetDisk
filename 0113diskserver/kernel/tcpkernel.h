@@ -12,6 +12,10 @@
 #include <fstream>
 #include <windows.h>
 #include<QDebug>
+#include"./json.hpp"
+#include <QFileInfo>
+#include "Logger.h"
+#define json nlohmann::json
 struct UploadFileInfo
 {
     FILE* m_pfile;
@@ -22,13 +26,15 @@ struct UploadFileInfo
 class TCPKernel : public IKernel
 {
 public:
+
 private:
     TCPKernel();
-    ~TCPKernel();
+     ~TCPKernel();
     public:
     virtual bool open();
     virtual void close();
     virtual void deelData(SOCKET sock,char*szbuf);
+    virtual void dealJsonData(SOCKET sock,char* szbuf);
     void registerrq(SOCKET sock,char* szbuf);
     void loginrq(SOCKET sock,char* szbuf);
     void getfilelistrq(SOCKET sock,char* szbuf);
@@ -39,7 +45,7 @@ private:
     void heartbeatrq(SOCKET sock);
     void searchfilerq(SOCKET sock,char* szbuf);
     void downloadfile(SOCKET sock,char* szbuf);
-
+    void getlinkfile(SOCKET sock,json js);
     static IKernel* getKernel()
     {
         return m_pKernel;

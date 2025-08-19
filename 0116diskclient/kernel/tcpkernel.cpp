@@ -1,5 +1,5 @@
 #include "tcpkernel.h"
-
+#include<fstream>
 TCPKernel::TCPKernel(QObject *parent)
     : QObject{parent}
 {
@@ -61,11 +61,46 @@ void TCPKernel::dealData(const char *szbuf)
         emit signal_searchfile((STRU_SEARCHFILE_RS*)szbuf);
         break;
     case _default_protocol_downloadfile_rs:
-
-        STRU_DOWNLOADFILE_RS *p=(STRU_DOWNLOADFILE_RS*)szbuf;
-        qDebug()<<"收到downloadrs"<<p->totalfilesize;
         emit signal_downlowad((STRU_DOWNLOADFILE_RS*)szbuf);
         break;
+    default:
+        {
+        LOG_ERROR("处理非Json数据遇到default str:{}",szbuf);
+        dealDatabyJson(szbuf);
+        }
     }
+
+}
+
+void TCPKernel::dealDatabyJson(const char *szbuf)
+{
+    json js=json::parse(szbuf);
+    int type=js["type"];
+    switch (type)
+    {
+    case _default_protocol_getlink_head_rs:
+    {
+        LOG_INFO("emit signal_downloadbyjson (head)");
+        emit signal_downloadbyjson(js);
+        break;
+    }
+    case _default_protocol_getlink_body_rs:
+    {
+        LOG_INFO("emit signal_downloadbyjson (body)");
+        emit signal_downloadbyjson(js);
+        break;
+
+    }
+    case _default_protocol_getlink_tail_rs:
+    {
+        LOG_INFO("emit signal_downloadbyjson (tail)");
+        emit signal_downloadbyjson(js);
+        break;
+    }
+    default:{
+        LOG_ERROR("处理Json数据遇到 default");
+    }
+    }
+
 }
 

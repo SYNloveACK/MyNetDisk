@@ -15,6 +15,7 @@ public:
     virtual bool open()=0;
     virtual void close()=0;
     virtual void deelData(SOCKET sock,char*szbuf)=0;
+    virtual void dealJsonData(SOCKET sock,char* szbuf)=0;
 
 };
 

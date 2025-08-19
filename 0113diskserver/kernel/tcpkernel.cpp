@@ -2,7 +2,62 @@
 #include<iostream>
 using namespace std;
 TCPKernel* TCPKernel::m_pKernel=new TCPKernel;
+#include <string>
+#include <vector>
 
+// Base64编码表
+static const char base64_chars[] =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "abcdefghijklmnopqrstuvwxyz"
+    "0123456789+/";
+
+std::string base64_encode(const uint8_t* data, size_t len) {
+    std::string encoded;
+    encoded.reserve(((len + 2) / 3) * 4); // 预留足够空间
+
+    int i = 0;
+    int j = 0;
+    uint8_t char_array_3[3];
+    uint8_t char_array_4[4];
+
+    while (len--) {
+        char_array_3[i++] = *(data++);
+        if (i == 3) {
+            char_array_4[0] = (char_array_3[0] & 0xfc) >> 2;
+            char_array_4[1] = ((char_array_3[0] & 0x03) << 4) + ((char_array_3[1] & 0xf0) >> 4);
+            char_array_4[2] = ((char_array_3[1] & 0x0f) << 2) + ((char_array_3[2] & 0xc0) >> 6);
+            char_array_4[3] = char_array_3[2] & 0x3f;
+
+            for (i = 0; i < 4; i++) {
+                encoded += base64_chars[char_array_4[i]];
+            }
+            i = 0;
+        }
+    }
+
+    // 处理剩余字节
+    if (i) {
+        for (j = i; j < 3; j++) {
+            char_array_3[j] = '\0';
+        }
+
+        char_array_4[0] = (char_array_3[0] & 0xfc) >> 2;
+        char_array_4[1] = ((char_array_3[0] & 0x03) << 4) + ((char_array_3[1] & 0xf0) >> 4);
+        char_array_4[2] = ((char_array_3[1] & 0x0f) << 2) + ((char_array_3[2] & 0xc0) >> 6);
+        char_array_4[3] = char_array_3[2] & 0x3f;
+
+        for (j = 0; j < i + 1; j++) {
+            encoded += base64_chars[char_array_4[j]];
+        }
+
+        // 添加填充字符
+        while (i++ < 3) {
+            encoded += '=';
+        }
+    }
+
+    return encoded;
+}
 void heartbeatcheck(std::map<SOCKET,QDateTime> * mp)
 {
     while(1){
@@ -64,58 +119,81 @@ void TCPKernel::deelData(SOCKET sock, char *szbuf)
     {
     case _default_protocol_register_rq:
     {
+        LOG_INFO("sock:{}  _default_protocol_register_rq",sock);
         registerrq(sock,szbuf);
     }
     break;
     case _default_protocol_login_rq:{
+        LOG_INFO("sock:{}  _default_protocol_login_rq",sock);
         loginrq(sock,szbuf);
     }
     break;
     case _default_protocol_getfilelist_rq:
     {
+        LOG_INFO("sock:{}  _default_protocol_getfilelist_rq",sock);
         getfilelistrq(sock,szbuf);
     }
     break;
     case _default_protocol_uploadfileinfo_rq:
     {
+                LOG_INFO("sock:{}  _default_protocol_uploadfileinfo_rq",sock);
         uploadfileinforq(sock,szbuf);
     }
     break;
     case _default_protocol_uploadfileblock_rq:
     {
-       uploadfileblockrq(sock,szbuf);
+        LOG_INFO("sock:{}  _default_protocol_uploadfileblock_rq",sock);
+        uploadfileblockrq(sock,szbuf);
     }
     break;
     case _default_protocol_sharelink_rq:
     {
-       sharelinkrq(sock,szbuf);
+        LOG_INFO("sock:{}  _default_protocol_sharelink_rq",sock);
+        sharelinkrq(sock,szbuf);
     }
     break;
     case _default_protocol_break_rq:
     {
-       breakrq(sock,szbuf);
+        LOG_INFO("sock:{}  _default_protocol_break_rq",sock);
+        breakrq(sock,szbuf);
     }
     break;
     case _default_protocol_heartbeat_rq:
     {
-       heartbeatrq(sock);
+        LOG_INFO("sock:{}  _default_protocol_heartbeat_rq",sock);
+        heartbeatrq(sock);
     }
     break;
     case _default_protocol_searchfile_rq:
     {
-       searchfilerq(sock,szbuf);
+        LOG_INFO("sock:{}  _default_protocol_searchfile_rq",sock);
+        searchfilerq(sock,szbuf);
     }
     break;
     case _default_protocol_downloadfile_rq:
     {
-       printf("downloadrq");
-       downloadfile(sock,szbuf);
+        LOG_INFO("sock:{}  _default_protocol_downloadfile_rq",sock);
+        downloadfile(sock,szbuf);
     }
     break;
 
     }
 
+}
 
+void TCPKernel::dealJsonData(SOCKET sock, char *szbuf)
+{
+    json js=json::parse(szbuf);
+    int type =js["type"];
+    switch(type)
+    {
+    case _default_protocol_getlink_rq:
+    {
+        LOG_INFO("sock:{}  Jsondata :_default_protocol_getlink_rq",sock);
+        getlinkfile(sock,js);
+        break;
+    }
+    }
 }
 
 void TCPKernel::registerrq(SOCKET sock, char *szbuf)
@@ -128,7 +206,7 @@ void TCPKernel::registerrq(SOCKET sock, char *szbuf)
     srr.m_szResult=_regist_err;
     sprintf(szsql,"insert into user (u_name,u_password,u_tel) values('%s','%s','%lld')",
             psrr->m_szName,psrr->m_szPassword,psrr->m_tel);
-    if(m_pSQL->UpdateMySql(szsql));
+    if(m_pSQL->UpdateMySql(szsql))
     {//更新成功
         srr.m_szResult=_regist_success;
         //获取用户ID
@@ -276,7 +354,7 @@ void TCPKernel::uploadfileinforq(SOCKET sock, char *szbuf)
 
         //2.1传文件信息到数据库
         m_pSQL->UpdateMySql(szsql);
-         //2.2将文件与用户信息映射到user_file
+            //2.2将文件与用户信息映射到user_file
         sprintf(szsql,"select f_id from file where f_md5 = '%s'",psur->m_szFileMD5);
         m_pSQL->SelectMySql(szsql,1,lststr);
         if(lststr.size()>0)
@@ -317,7 +395,7 @@ void TCPKernel::uploadfileblockrq(SOCKET sock, char *szbuf)
     if(!p)
     {
         std::cout<<"TCPKernel::uploadfileblockrq的 UploadFileInfo 为空"<<endl;
-        return;
+            return;
     }
     //将文件信息写入到对应的文件中
     //printf("m_pos:%d  filesize:%d\n",p->m_pos,p->m_fileSize);
@@ -344,30 +422,6 @@ void TCPKernel::uploadfileblockrq(SOCKET sock, char *szbuf)
         }
     }
 
-    /*
-    size_t remaining = psur->m_fileNum;  // 剩余需写入的字节数
-    const char* pData = psur->m_szFileContent;  // 当前写入位置
-
-    while (remaining > 0) {
-        size_t nWritNum = fwrite(pData, sizeof(char), remaining, p->m_pfile);
-        if (nWritNum <= 0) {
-            // 处理错误（如磁盘满、文件关闭等）
-            perror("fwrite failed");
-            break;
-        }
-        remaining -= nWritNum;
-        pData += nWritNum;
-        p->m_pos += nWritNum;
-    }
-
-    // 只有完全写入后才更新状态
-    if (remaining == 0 && p->m_pos == p->m_fileSize) {
-        cout<<"写入了"<< p->m_fileSize<<"大小数据"<<endl;
-        fclose(p->m_pfile);
-        m_mapFileIdtoFileInfo.erase(psur->m_fileId);  // C++17起支持直接erase
-    }
-*/
-
 }
 
 void TCPKernel::sharelinkrq(SOCKET sock, char *szbuf)
@@ -380,16 +434,16 @@ void TCPKernel::sharelinkrq(SOCKET sock, char *szbuf)
     char c;
     char szCode[MAXSIZE]={0};
 
-        for (int i = 0; i < 4; i++) {
-            int randNum = rand() % 36;
-         if (randNum < 10){
-                c = randNum + '0'; // 生成数字 0-9 对应的 ASCII 字符
-            }
-            else {
-                c = randNum - 10 + 'A'; // 生成字母 A-Z 对应的 ASCII 字符
-            }
-            szCode[i]=c;
+    for (int i = 0; i < 4; i++) {
+        int randNum = rand() % 36;
+        if (randNum < 10){
+            c = randNum + '0'; // 生成数字 0-9 对应的 ASCII 字符
         }
+        else {
+            c = randNum - 10 + 'A'; // 生成字母 A-Z 对应的 ASCII 字符
+        }
+        szCode[i]=c;
+    }
 
     char szsql[SQLLEN]={0};
     list<string> lststr;
@@ -400,7 +454,7 @@ void TCPKernel::sharelinkrq(SOCKET sock, char *szbuf)
         string strFileId=lststr.front();
         lststr.pop_front();
         long long FileId=atoll(strFileId.c_str());
-         //将分享的文件信息存储到数据库中
+            //将分享的文件信息存储到数据库中
         sprintf(szsql,"insert into user_share(u_id,f_id,code) values(%lld,%lld,'%s')",pssr->m_userId,FileId,szCode);
         m_pSQL->UpdateMySql(szsql);
     }
@@ -417,7 +471,6 @@ void TCPKernel::breakrq(SOCKET sock, char *szbuf)
     if(sock){
         closesocket(sock);
     }
-    printf("offline\n");
 }
 
 void TCPKernel::heartbeatrq(SOCKET sock)
@@ -445,16 +498,16 @@ void TCPKernel::searchfilerq(SOCKET sock, char *szbuf)
         sfs.m_FileNum=lststr.size()/3;
         int i=0;
         while(!lststr.empty()){
-                string filename=lststr.front();
-                lststr.pop_front();
-                string filesize=lststr.front();
-                lststr.pop_front();
-                string filedate=lststr.front();
-                lststr.pop_front();
-                strcpy(sfs.m_aryInfo[i].m_szFileName,filename.c_str());
-                strcpy(sfs.m_aryInfo[i].m_szFileDateTime,filedate.c_str());
-                sfs.m_aryInfo[i].m_fileSize=atoll(filesize.c_str());
-                i++;
+            string filename=lststr.front();
+            lststr.pop_front();
+            string filesize=lststr.front();
+            lststr.pop_front();
+            string filedate=lststr.front();
+            lststr.pop_front();
+            strcpy(sfs.m_aryInfo[i].m_szFileName,filename.c_str());
+            strcpy(sfs.m_aryInfo[i].m_szFileDateTime,filedate.c_str());
+            sfs.m_aryInfo[i].m_fileSize=atoll(filesize.c_str());
+            i++;
         }
     }
     m_pTCPNet->sendData(sock,(char*)&sfs,sizeof(sfs));
@@ -499,7 +552,6 @@ void download(INet* pTCPNet,string fpath,SOCKET sock,int fid,string downloadpath
     if(!pfile)
     {
         qDebug()<<"无法打开文件";
-        //cout<<"无法打开文件";
         return;
     }
     int filesize=getFileSize(pfile);
@@ -512,9 +564,9 @@ void download(INet* pTCPNet,string fpath,SOCKET sock,int fid,string downloadpath
         if(read>0)
         {
             totalread+=read;
-                qDebug()<<"读取字节数："<<read;
+            qDebug()<<"读取字节数："<<read;
             //printf("读取%d字节\n",read);
-                sds.pagesize=read;
+            sds.pagesize=read;
             pTCPNet->sendData(sock,(char*)&sds,sizeof(sds));
         }
     }
@@ -538,6 +590,104 @@ void TCPKernel::downloadfile(SOCKET sock, char *szbuf)
     downloadthread.detach();
 
 }
+
+int min(int a,int b)
+{
+    return a<b?a:b;
+}
+
+
+
+void downloadbyjson(INet* pTCPNet, string fpath, SOCKET sock, int fid, string downloadpath)
+{
+    // 第一步：发送HEAD
+    json head = json::object();
+    head["type"] = _default_protocol_getlink_head_rs;
+    head["fileId"] = fid;
+    head["downloadPath"] = downloadpath;
+    QString qfpath = QString::fromUtf8(fpath.c_str());
+    QString fileName = qfpath.section('/', -1);
+    head["fileName"] = fileName.toStdString();
+
+    FILE* pfile = _wfopen(utf8ToWide(fpath.c_str()).c_str(), L"rb");
+    if (!pfile) {
+        LOG_ERROR("downloadbyjson open file fail! fpath:{}",fpath);
+        return;
+    }
+
+    size_t filesize = getFileSize(pfile);
+    head["totalFileSize"] = filesize;
+
+    // 发送HEAD
+    string headstr = head.dump();
+    LOG_INFO("downloadbyjson: head:{}",headstr.c_str());
+    pTCPNet->sendData(sock, headstr.c_str(), headstr.size());
+
+    // 第二步：发送BODY（分块）
+    const size_t CHUNK_SIZE = 4 * 1024; // 4KB
+    std::vector<uint8_t> buffer(CHUNK_SIZE);
+    size_t totalread = 0;
+    int chunkId = 0;
+
+    while (totalread < filesize) {
+        size_t currentChunkSize = min(CHUNK_SIZE, filesize - totalread);
+        buffer.resize(currentChunkSize);
+        size_t read = fread(buffer.data(), 1, currentChunkSize, pfile);
+        if (read > 0) {
+            json body = json::object();
+            body["type"] = _default_protocol_getlink_body_rs;
+            body["fileId"] = fid;
+            body["offset"] = totalread;
+            body["chunkSize"] = read;
+            body["chunkId"] = chunkId;
+            body["fileContent"] = base64_encode(buffer.data(), read);
+
+            string bodystr = body.dump();
+            pTCPNet->sendData(sock, bodystr.c_str(), bodystr.size());
+
+            totalread += read;
+            chunkId++;
+            qDebug() << "发送分块: ID=" << chunkId << "大小=" << read << "偏移=" << totalread - read;
+            LOG_INFO("downloadbyjson:body 发送分块id={}  大小=%{}  偏移={}",chunkId,read,totalread - read);
+        }
+    }
+    fclose(pfile);
+
+    // 第三步：发送TAIL
+    json tail = json::object();
+    tail["type"] = _default_protocol_getlink_tail_rs;
+    tail["fileId"] = fid;
+    string tailstr = tail.dump();
+    pTCPNet->sendData(sock, tailstr.c_str(), tailstr.size());
+    LOG_INFO("downloadbyjson:tail 文件id={}",fid);
+    qDebug() << "文件传输完成";
+}
+void TCPKernel::getlinkfile(SOCKET sock, json js)
+{
+    char szsql[SQLLEN]={};
+    if(!js["link"].is_string())
+    {
+        LOG_ERROR("js[\"link\"] is not a string");
+        return;
+    }
+    sprintf(szsql,"select f_id,f_path from 0113disk.file where f_id=(select f_id from 0113disk.user_share where 0113disk.user_share.code='%s');",js["link"].get<std::string>().c_str());
+    list<string> lst;
+    m_pSQL->SelectMySql(szsql,2,lst);
+    if(lst.empty())
+    {
+        LOG_ERROR("无法找到连接文件！");
+        return;
+    }
+    int fid=stoi(lst.front());
+    lst.pop_front();
+    string fpath=lst.front();
+    lst.pop_front();
+    string downloadpath=js["path"].get<std::string>();
+    std::thread downloadthread(downloadbyjson,m_pTCPNet,fpath,sock,fid,downloadpath);
+    downloadthread.detach();
+}
+
+
 
 
 

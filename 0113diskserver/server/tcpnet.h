@@ -6,8 +6,9 @@
 #include <list>
 #include <map>
 #include"iNet.h"
+#include"./json.hpp"
 #define MAXNUM   1024
-
+#define json nlohmann::json
 class TCPNet:public INet
 {
 public:

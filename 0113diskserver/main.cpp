@@ -1,11 +1,18 @@
 #include <QCoreApplication>
 #include"./kernel/tcpkernel.h"
-void cheakheart(){
+#include "Logger.h"
 
-}
+
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+
+    // 初始化日志系统
+    Logger::initialize();
+
+    LOG_INFO("应用程序启动");
+
     IKernel *p=TCPKernel::getKernel();
     if(p->open())
     {

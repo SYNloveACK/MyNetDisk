@@ -15,6 +15,8 @@ public:
     virtual void disconnect(const char* szerr)=0;
     virtual bool sendData(const char* szbuf,int nlen)=0;
     virtual void dealData(const char* szbuf)=0;
+    virtual void dealDatabyJson(const char* szbuf)=0;
+
 };
 
 #endif // IKERNEL_H

@@ -6,6 +6,9 @@
 #include"../client/tcpnet.h"
 #include"IKernel.h"
 #include"Packdef.h"
+#include"./json.hpp"
+#include"logger.h"
+using json = nlohmann::json;
 class TCPKernel : public QObject,public IKernel
 {
     Q_OBJECT
@@ -17,7 +20,7 @@ public:
      void disconnect(const char* szerr);
      bool sendData(const char* szbuf,int nlen);
      void dealData(const char* szbuf);
-
+     void dealDatabyJson(const char*szbuf);
 signals:
      void signal_register(STRU_REGISTER_RS* );
     void signal_login(STRU_LOGIN_RS* );
@@ -27,6 +30,7 @@ signals:
     void signal_break(STRU_BREAK_RS*);
       void signal_searchfile(STRU_SEARCHFILE_RS*);
     void signal_downlowad(STRU_DOWNLOADFILE_RS*);
+      void signal_downloadbyjson(json& js);
  private:
     TCPNet * m_pTCPNet;
 

@@ -1,5 +1,7 @@
 #include "tcpnet.h"
 #include"../kernel/tcpkernel.h"
+#include <algorithm>
+#include <cctype>
 TCPNet::TCPNet()
 {
     m_socklisten = 0;
@@ -193,6 +195,38 @@ bool TCPNet::sendData(SOCKET sock, const char *szbuf, int nlen)
     return true;
 }
 */
+bool isStringValidJson(const std::string& str) {
+    return json::accept(str);  // 直接返回是否合法
+}
+bool isProbablyJson(const std::string& str) {
+    if (str.empty()) return false;
+
+    // 去除首尾空白字符
+    auto start = str.find_first_not_of(" \t\n\r");
+    auto end = str.find_last_not_of(" \t\n\r");
+    if (start == std::string::npos || end == std::string::npos) {
+       return false;  // 全是空白字符
+    }
+
+    // 检查第一个和最后一个非空字符
+    char firstChar = str[start];
+    char lastChar = str[end];
+
+    // 合法 JSON 应该以 { 或 [ 开头，以 } 或 ] 结尾
+    bool isObject = (firstChar == '{' && lastChar == '}');
+    bool isArray = (firstChar == '[' && lastChar == ']');
+
+    if (!isObject && !isArray) {
+       return false;  // 明显不符合 JSON 结构
+    }
+
+    // 可选：简单长度检查（避免 {} 或 []）
+    if (end - start + 1 <= 2) {
+       return false;  // 太短，可能是空对象或空数组
+    }
+
+    return true;  // 可能是 JSON
+}
 void TCPNet::recvData()
 {
     SOCKET sockWaiter =  m_mapThreadIdToSocket[GetCurrentThreadId()];
@@ -223,7 +257,16 @@ void TCPNet::recvData()
        }
 
       //printf("client say:%s\n",pszbuf);
-       TCPKernel::getKernel()->deelData(sockWaiter,pszbuf);
+
+       if(isProbablyJson(pszbuf))
+       {
+            TCPKernel::getKernel()->dealJsonData(sockWaiter,pszbuf);
+       }
+       else
+       {
+            TCPKernel::getKernel()->deelData(sockWaiter,pszbuf);
+       }
+
        delete []pszbuf;
        pszbuf = NULL;
 
