@@ -46,3 +46,15 @@ Makefile
 *.app
 *.ipa
 *.apk
+
+
+# 临时文件
+tmp*/
+*tmp*
+temp/
+*/temp/
+userslenovoappdatalocaltemp*
+
+# 其他临时文件
+*.tmp
+*.temp
