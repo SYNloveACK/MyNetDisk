@@ -432,27 +432,46 @@ void TCPKernel::sharelinkrq(SOCKET sock, char *szbuf)
     //生成码4位数字
     srand((unsigned int)time(0));
     char c;
-    char szCode[MAXSIZE]={0};
-
-    for (int i = 0; i < 4; i++) {
-        int randNum = rand() % 36;
-        if (randNum < 10){
-            c = randNum + '0'; // 生成数字 0-9 对应的 ASCII 字符
-        }
-        else {
-            c = randNum - 10 + 'A'; // 生成字母 A-Z 对应的 ASCII 字符
-        }
-        szCode[i]=c;
-    }
 
     char szsql[SQLLEN]={0};
     list<string> lststr;
-    sprintf(szsql,"select f_id from myview where u_id=%lld and f_name ='%s'",pssr->m_userId,pssr->m_szFileName);
-    m_pSQL->SelectMySql(szsql,1,lststr);
+    char szCode[5]={0};
+    while(1)
+    {
+        for (int i = 0; i < 4; i++) {
+            int randNum = rand() % 36;
+            if (randNum < 10){
+                c = randNum + '0'; // 生成数字 0-9 对应的 ASCII 字符
+            }
+            else {
+                c = randNum - 10 + 'A'; // 生成字母 A-Z 对应的 ASCII 字符
+            }
+            szCode[i]=c;
+        }
+
+        sprintf(szsql,"select num from 0113disk.user_share where code = '%s'",szCode);
+        m_pSQL->SelectMySql(szsql,1,lststr);
+        if(lststr.empty())
+        {
+        break;
+        }
+        else
+        {
+        lststr.pop_back();
+        }
+    }
+
+
+    sprintf(szsql,"select f_id,f_path from myview where u_id=%lld and f_name ='%s'",pssr->m_userId,pssr->m_szFileName);
+    m_pSQL->SelectMySql(szsql,2,lststr);
     if(lststr.size()>0)
     {
         string strFileId=lststr.front();
         lststr.pop_front();
+        string f_path=lststr.front();
+        lststr.pop_front();
+        RedisManager& redis=RedisManager::instance();
+        !redis.storeFileInfoJson(strFileId,f_path,szCode);
         long long FileId=atoll(strFileId.c_str());
             //将分享的文件信息存储到数据库中
         sprintf(szsql,"insert into user_share(u_id,f_id,code) values(%lld,%lld,'%s')",pssr->m_userId,FileId,szCode);
@@ -460,7 +479,6 @@ void TCPKernel::sharelinkrq(SOCKET sock, char *szbuf)
     }
     //发回复
     strcpy(ssr.m_szCode,szCode);
-    strcpy(ssr.m_szLink,"D:/code/test.html");
     m_pTCPNet->sendData(sock,(char*)&ssr,sizeof(ssr));
 }
 
@@ -662,31 +680,76 @@ void downloadbyjson(INet* pTCPNet, string fpath, SOCKET sock, int fid, string do
     LOG_INFO("downloadbyjson:tail 文件id={}",fid);
     qDebug() << "文件传输完成";
 }
+//void TCPKernel::getlinkfile(SOCKET sock, json js)
+//{
+//    char szsql[SQLLEN]={};
+//    if(!js["link"].is_string())
+//    {
+//        LOG_ERROR("js[\"link\"] is not a string");
+//        return;
+//    }
+//    sprintf(szsql,"select f_id,f_path from 0113disk.file where f_id=(select f_id from 0113disk.user_share where 0113disk.user_share.code='%s');",js["link"].get<std::string>().c_str());
+//    list<string> lst;
+//    m_pSQL->SelectMySql(szsql,2,lst);
+//    if(lst.empty())
+//    {
+//        LOG_ERROR("无法找到连接文件！");
+//        return;
+//    }
+//    int fid=stoi(lst.front());
+//    lst.pop_front();
+//    string fpath=lst.front();
+//    lst.pop_front();
+//    string downloadpath=js["path"].get<std::string>();
+//    std::thread downloadthread(downloadbyjson,m_pTCPNet,fpath,sock,fid,downloadpath);
+//    downloadthread.detach();
+//}
+
 void TCPKernel::getlinkfile(SOCKET sock, json js)
 {
-    char szsql[SQLLEN]={};
     if(!js["link"].is_string())
     {
         LOG_ERROR("js[\"link\"] is not a string");
         return;
     }
-    sprintf(szsql,"select f_id,f_path from 0113disk.file where f_id=(select f_id from 0113disk.user_share where 0113disk.user_share.code='%s');",js["link"].get<std::string>().c_str());
-    list<string> lst;
-    m_pSQL->SelectMySql(szsql,2,lst);
-    if(lst.empty())
+    string link=js["link"].get<std::string>();
+    json res=json::object();
+    RedisManager& redis=RedisManager::instance();
+
+    if(!redis.getFileInfoJson(link,res))
     {
-        LOG_ERROR("无法找到连接文件！");
+        LOG_ERROR("TCPKernel::getlinkfile  getFileInfoJson fail");
+        char szsql[SQLLEN]={};
+        if(!js["link"].is_string())
+        {
+            LOG_ERROR("js[\"link\"] is not a string");
+            return;
+        }
+        sprintf(szsql,"select f_id,f_path from 0113disk.file where f_id=(select f_id from 0113disk.user_share where 0113disk.user_share.code='%s');",js["link"].get<std::string>().c_str());
+        list<string> lst;
+        m_pSQL->SelectMySql(szsql,2,lst);
+        if(lst.empty())
+        {
+            LOG_ERROR("无法找到连接文件！");
+            return;
+        }
+        int fid=stoi(lst.front());
+        lst.pop_front();
+        string fpath=lst.front();
+        lst.pop_front();
+        string downloadpath=js["path"].get<std::string>();
+        std::thread downloadthread(downloadbyjson,m_pTCPNet,fpath,sock,fid,downloadpath);
+        downloadthread.detach();
         return;
     }
-    int fid=stoi(lst.front());
-    lst.pop_front();
-    string fpath=lst.front();
-    lst.pop_front();
+    LOG_INFO("TCPKernel::getlinkfile getFileInfoJson success");
+    LOG_INFO("TCPKernel::getlinkfile json:%s",res.dump());
     string downloadpath=js["path"].get<std::string>();
+    string fpath=res["f_path"];
+    int fid=std::stoi(res["f_id"].get<std::string>());
     std::thread downloadthread(downloadbyjson,m_pTCPNet,fpath,sock,fid,downloadpath);
     downloadthread.detach();
 }
-
 
 
 

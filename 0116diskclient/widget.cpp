@@ -132,9 +132,6 @@ void Widget::slot_getfilelist(STRU_GETFILELIST_RS *psgr)
 
 void SendFileItask::run()
 {
-    //FILE *pfile=fopen(m_pInfo->m_szFilePath,"rb");
-
-
     // 转换UTF-8路径为宽字符
     // 使用_wfopen打开文件
     FILE* pfile = _wfopen(utf8ToWide(m_pInfo->m_szFilePath).c_str(), L"rb");
@@ -222,8 +219,7 @@ void Widget::slot_uploadfileinfo(STRU_UPLOADFILEINFO_RS *psur)
 
 void Widget::slot_sharelink(STRU_SHARELLINK_RS *pssr)
 {
-    QString strLink=pssr->m_szLink;
-    strLink=strLink+"code: "+pssr->m_szCode;
+    QString strLink=pssr->m_szCode;
    // QMessageBox::information(this,"share link",strLink);
     QInputDialog::getText(this,tr("share link"),
                           tr("share link address"),QLineEdit::Normal,

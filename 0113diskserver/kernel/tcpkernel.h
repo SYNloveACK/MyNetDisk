@@ -15,6 +15,7 @@
 #include"./json.hpp"
 #include <QFileInfo>
 #include "Logger.h"
+#include "redismanager.h"
 #define json nlohmann::json
 struct UploadFileInfo
 {
