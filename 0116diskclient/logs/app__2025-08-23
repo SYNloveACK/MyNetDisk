@@ -1,0 +1,154 @@
+[2025-08-23 21:11:16.266] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:11:16.266] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:14:17.465] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:14:17.465] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:14:58.645] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 21:14:58.653] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小52
+[2025-08-23 21:14:58.653] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:14:58.655] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=52 进度=52/52
+[2025-08-23 21:14:58.655] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 21:14:58.655] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 21:19:43.005] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:19:43.005] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:20:13.880] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 21:20:13.883] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小52
+[2025-08-23 21:20:13.883] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:20:13.892] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=52 进度=52/52
+[2025-08-23 21:20:13.892] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 21:20:13.892] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 21:31:23.642] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:31:23.642] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:31:57.634] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 21:31:57.636] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小878
+[2025-08-23 21:31:57.636] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:31:57.647] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=878 进度=878/878
+[2025-08-23 21:31:57.647] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 21:31:57.647] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 21:44:50.793] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:44:50.793] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:45:41.164] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:45:41.164] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:46:07.533] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 21:46:07.538] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小14866
+[2025-08-23 21:46:07.539] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:46:07.546] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/14866
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/14866
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/14866
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=2578 进度=14866/14866
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 21:46:07.547] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 21:52:27.173] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:52:27.173] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:52:56.541] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 21:52:56.543] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小14866
+[2025-08-23 21:52:56.543] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:52:56.555] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/14866
+[2025-08-23 21:52:56.555] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:52:56.555] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/14866
+[2025-08-23 21:52:56.556] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:52:56.556] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/14866
+[2025-08-23 21:52:56.556] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 21:52:56.556] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=2578 进度=14866/14866
+[2025-08-23 21:52:56.556] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 21:52:56.556] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 22:02:33.104] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:02:33.104] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:03:01.464] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 22:03:01.468] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小14866
+[2025-08-23 22:03:01.468] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:03:01.477] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/14866
+[2025-08-23 22:03:01.477] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:03:01.477] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/14866
+[2025-08-23 22:03:01.478] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:03:01.478] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/14866
+[2025-08-23 22:03:01.478] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:03:01.478] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=2578 进度=14866/14866
+[2025-08-23 22:03:01.478] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 22:03:01.478] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 22:09:21.323] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:09:21.323] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:09:45.286] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 22:09:45.288] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小14866
+[2025-08-23 22:09:45.289] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:09:45.299] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/14866
+[2025-08-23 22:09:45.299] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:09:45.299] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/14866
+[2025-08-23 22:09:45.299] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:09:45.300] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/14866
+[2025-08-23 22:09:45.300] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:09:45.300] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=2578 进度=14866/14866
+[2025-08-23 22:09:45.300] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 22:09:45.300] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 22:20:56.903] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:20:56.903] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:13:44.713] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:13:44.713] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:14:09.791] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 22:14:09.793] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小14866
+[2025-08-23 22:14:09.793] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:14:09.803] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/14866
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/14866
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/14866
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=2578 进度=14866/14866
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 22:14:09.804] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 22:31:16.753] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:31:16.753] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:35:29.281] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:35:29.281] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:35:56.007] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 22:35:56.010] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小52
+[2025-08-23 22:35:56.010] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:35:56.020] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=52 进度=52/52
+[2025-08-23 22:35:56.020] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 22:35:56.020] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 22:53:45.894] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:53:45.894] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小29217
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/29217
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/29217
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/29217
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=4096 进度=16384/29217
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] handleBodyMessage:接收分块ID=4 大小=4096 进度=20480/29217
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] handleBodyMessage:接收分块ID=5 大小=4096 进度=24576/29217
+[2025-08-23 22:54:03.328] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.328] [multi_file_logger] [info] handleBodyMessage:接收分块ID=6 大小=4096 进度=28672/29217
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] handleBodyMessage:接收分块ID=7 大小=545 进度=29217/29217
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] handleTailMessage:文件传输完成
+[2025-08-23 22:56:45.331] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:56:45.331] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:57:02.280] [multi_file_logger] [info] emit signal_downloadbyjson (head)
+[2025-08-23 22:57:02.290] [multi_file_logger] [info] handleHeadMessage:文件初始化完成，大小29217
+[2025-08-23 22:57:02.290] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.292] [multi_file_logger] [info] handleBodyMessage:接收分块ID=0 大小=4096 进度=4096/29217
+[2025-08-23 22:57:02.292] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.292] [multi_file_logger] [info] handleBodyMessage:接收分块ID=1 大小=4096 进度=8192/29217
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] handleBodyMessage:接收分块ID=2 大小=4096 进度=12288/29217
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] handleBodyMessage:接收分块ID=3 大小=4096 进度=16384/29217
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] handleBodyMessage:接收分块ID=4 大小=4096 进度=20480/29217
+[2025-08-23 22:57:02.306] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.306] [multi_file_logger] [info] handleBodyMessage:接收分块ID=5 大小=4096 进度=24576/29217
+[2025-08-23 22:57:02.306] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.306] [multi_file_logger] [info] handleBodyMessage:接收分块ID=6 大小=4096 进度=28672/29217
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] emit signal_downloadbyjson (body)
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] handleBodyMessage:接收分块ID=7 大小=545 进度=29217/29217
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] emit signal_downloadbyjson (tail)
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] handleTailMessage:文件传输完成

@@ -1,0 +1,206 @@
+[2025-08-23 21:44:59.731] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 21:44:59.731] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 21:45:01.779] [multi_file_logger] [error] Redis连接失败
+[2025-08-23 22:01:43.054] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:01:43.054] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:01:43.054] [multi_file_logger] [info] Redis连接成功
+[2025-08-23 22:01:43.054] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:01:49.687] [multi_file_logger] [info] 应用程序正常退出，退出码：%d
+[2025-08-23 22:02:29.395] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:02:29.395] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:02:29.395] [multi_file_logger] [info] Redis连接成功
+[2025-08-23 22:02:29.395] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:02:37.285] [multi_file_logger] [info] sock:820  _default_protocol_login_rq
+[2025-08-23 22:02:37.314] [multi_file_logger] [info] sock:820  _default_protocol_getfilelist_rq
+[2025-08-23 22:02:38.335] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:02:42.335] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:02:46.348] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:02:50.353] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:02:54.364] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:02:58.372] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:03:01.462] [multi_file_logger] [info] sock:820  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:03:01.462] [multi_file_logger] [error] 未查询到文件信息！
+[2025-08-23 22:03:01.462] [multi_file_logger] [error] TCPKernel::getlinkfile  getFileInfoJson fail
+[2025-08-23 22:03:01.464] [multi_file_logger] [info] downloadbyjson: head:{"downloadPath":"C:/Users/Lenovo/Desktop/test下载","fileId":117,"fileName":"新建 Microsoft Word 文档.docx","totalFileSize":14866,"type":34}
+[2025-08-23 22:03:01.470] [multi_file_logger] [info] downloadbyjson:body 发送分块id=1  大小=%4096  偏移=0
+[2025-08-23 22:03:01.472] [multi_file_logger] [info] downloadbyjson:body 发送分块id=2  大小=%4096  偏移=4096
+[2025-08-23 22:03:01.475] [multi_file_logger] [info] downloadbyjson:body 发送分块id=3  大小=%4096  偏移=8192
+[2025-08-23 22:03:01.476] [multi_file_logger] [info] downloadbyjson:body 发送分块id=4  大小=%2578  偏移=12288
+[2025-08-23 22:03:01.477] [multi_file_logger] [info] downloadbyjson:tail 文件id=117
+[2025-08-23 22:03:02.377] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:03:06.379] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:03:13.661] [multi_file_logger] [info] 应用程序正常退出，退出码：%d
+[2025-08-23 22:09:11.893] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:09:11.893] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:09:11.893] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:09:27.315] [multi_file_logger] [info] sock:828  _default_protocol_login_rq
+[2025-08-23 22:09:27.344] [multi_file_logger] [info] sock:828  _default_protocol_getfilelist_rq
+[2025-08-23 22:09:28.160] [multi_file_logger] [info] sock:828  _default_protocol_heartbeat_rq
+[2025-08-23 22:09:32.161] [multi_file_logger] [info] sock:828  _default_protocol_heartbeat_rq
+[2025-08-23 22:09:36.165] [multi_file_logger] [info] sock:828  _default_protocol_heartbeat_rq
+[2025-08-23 22:09:40.165] [multi_file_logger] [info] sock:828  _default_protocol_heartbeat_rq
+[2025-08-23 22:09:44.175] [multi_file_logger] [info] sock:828  _default_protocol_heartbeat_rq
+[2025-08-23 22:09:45.284] [multi_file_logger] [info] sock:828  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:09:45.284] [multi_file_logger] [info] link key:%s
+[2025-08-23 22:09:45.284] [multi_file_logger] [error] 未查询到文件信息！
+[2025-08-23 22:09:45.284] [multi_file_logger] [error] TCPKernel::getlinkfile  getFileInfoJson fail
+[2025-08-23 22:09:45.286] [multi_file_logger] [info] downloadbyjson: head:{"downloadPath":"C:/Users/Lenovo/Desktop/test下载","fileId":117,"fileName":"新建 Microsoft Word 文档.docx","totalFileSize":14866,"type":34}
+[2025-08-23 22:09:45.293] [multi_file_logger] [info] downloadbyjson:body 发送分块id=1  大小=%4096  偏移=0
+[2025-08-23 22:09:45.295] [multi_file_logger] [info] downloadbyjson:body 发送分块id=2  大小=%4096  偏移=4096
+[2025-08-23 22:09:45.296] [multi_file_logger] [info] downloadbyjson:body 发送分块id=3  大小=%4096  偏移=8192
+[2025-08-23 22:09:45.299] [multi_file_logger] [info] downloadbyjson:body 发送分块id=4  大小=%2578  偏移=12288
+[2025-08-23 22:09:45.299] [multi_file_logger] [info] downloadbyjson:tail 文件id=117
+[2025-08-23 22:09:48.179] [multi_file_logger] [info] sock:828  _default_protocol_heartbeat_rq
+[2025-08-23 22:09:53.885] [multi_file_logger] [info] 应用程序正常退出，退出码：0
+[2025-08-23 22:13:38.433] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:13:38.437] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:13:38.439] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:13:56.004] [multi_file_logger] [info] sock:820  _default_protocol_login_rq
+[2025-08-23 22:13:56.040] [multi_file_logger] [info] sock:820  _default_protocol_getfilelist_rq
+[2025-08-23 22:13:57.936] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:14:01.936] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:14:05.944] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:14:09.788] [multi_file_logger] [info] sock:820  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:14:09.789] [multi_file_logger] [info] link key:file:file:CQTO
+[2025-08-23 22:14:09.789] [multi_file_logger] [debug] res=
+[2025-08-23 22:14:09.789] [multi_file_logger] [error] 未查询到文件信息！
+[2025-08-23 22:14:09.789] [multi_file_logger] [error] TCPKernel::getlinkfile  getFileInfoJson fail
+[2025-08-23 22:14:09.791] [multi_file_logger] [info] downloadbyjson: head:{"downloadPath":"C:/Users/Lenovo/Desktop/test下载","fileId":117,"fileName":"新建 Microsoft Word 文档.docx","totalFileSize":14866,"type":34}
+[2025-08-23 22:14:09.797] [multi_file_logger] [info] downloadbyjson:body 发送分块id=1  大小=%4096  偏移=0
+[2025-08-23 22:14:09.798] [multi_file_logger] [info] downloadbyjson:body 发送分块id=2  大小=%4096  偏移=4096
+[2025-08-23 22:14:09.800] [multi_file_logger] [info] downloadbyjson:body 发送分块id=3  大小=%4096  偏移=8192
+[2025-08-23 22:14:09.803] [multi_file_logger] [info] downloadbyjson:body 发送分块id=4  大小=%2578  偏移=12288
+[2025-08-23 22:14:09.803] [multi_file_logger] [info] downloadbyjson:tail 文件id=117
+[2025-08-23 22:14:09.954] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:14:13.958] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:14:15.717] [multi_file_logger] [info] 应用程序正常退出，退出码：0
+[2025-08-23 22:20:52.721] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:20:52.721] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:20:52.722] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:21:01.700] [multi_file_logger] [info] sock:816  _default_protocol_login_rq
+[2025-08-23 22:21:01.732] [multi_file_logger] [info] sock:816  _default_protocol_getfilelist_rq
+[2025-08-23 22:21:02.480] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:21:06.480] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:21:10.488] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:21:12.477] [multi_file_logger] [info] sock:816  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:21:12.477] [multi_file_logger] [info] link key:file:CQTO
+[2025-08-23 22:21:12.477] [multi_file_logger] [debug] res={"C:/mydisk/11/新建 Microsoft Word 文档.docx":"C:/mydisk/11/新建 Microsoft Word 文档.docx","f_id":"117","link":"CQTO"}
+[2025-08-23 22:21:12.477] [multi_file_logger] [info] 查询成功，json={}
+[2025-08-23 22:21:12.477] [multi_file_logger] [info] TCPKernel::getlinkfile getFileInfoJson success
+[2025-08-23 22:21:12.477] [multi_file_logger] [info] TCPKernel::getlinkfile json:%s
+[2025-08-23 22:31:10.667] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:31:10.667] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:31:10.667] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:31:20.799] [multi_file_logger] [info] sock:816  _default_protocol_login_rq
+[2025-08-23 22:31:20.823] [multi_file_logger] [info] sock:816  _default_protocol_getfilelist_rq
+[2025-08-23 22:31:21.655] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:31:25.655] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:31:29.662] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:31:33.675] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:31:37.683] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:31:41.690] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:31:42.100] [multi_file_logger] [info] sock:816  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:31:42.100] [multi_file_logger] [info] link key:file:CQTO
+[2025-08-23 22:31:42.100] [multi_file_logger] [debug] res={"C:/mydisk/11/新建 Microsoft Word 文档.docx":"C:/mydisk/11/新建 Microsoft Word 文档.docx","f_id":"117","link":"CQTO"}
+[2025-08-23 22:31:42.100] [multi_file_logger] [info] 查询成功, json={"C:/mydisk/11/新建 Microsoft Word 文档.docx":"C:/mydisk/11/新建 Microsoft Word 文档.docx","f_id":"117","link":"CQTO"}
+[2025-08-23 22:31:42.100] [multi_file_logger] [info] TCPKernel::getlinkfile getFileInfoJson success
+[2025-08-23 22:31:42.100] [multi_file_logger] [info] TCPKernel::getlinkfile json:%s
+[2025-08-23 22:35:05.842] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:35:05.842] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:35:05.842] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:35:33.096] [multi_file_logger] [info] sock:820  _default_protocol_login_rq
+[2025-08-23 22:35:33.124] [multi_file_logger] [info] sock:820  _default_protocol_getfilelist_rq
+[2025-08-23 22:35:33.968] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:35:37.969] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:35:41.971] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:35:45.980] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:35:47.376] [multi_file_logger] [info] sock:820  _default_protocol_sharelink_rq
+[2025-08-23 22:35:47.377] [multi_file_logger] [info] storeFileInfoJson 插入成功！
+[2025-08-23 22:35:49.991] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:35:53.999] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:35:56.006] [multi_file_logger] [info] sock:820  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:35:56.006] [multi_file_logger] [info] link key:file:T3QE
+[2025-08-23 22:35:56.007] [multi_file_logger] [debug] res={"f_id":"112","f_path":"C:/mydisk/11/Path.txt","link":"T3QE"}
+[2025-08-23 22:35:56.007] [multi_file_logger] [info] 查询成功, json={"f_id":"112","f_path":"C:/mydisk/11/Path.txt","link":"T3QE"}
+[2025-08-23 22:35:56.007] [multi_file_logger] [info] TCPKernel::getlinkfile getFileInfoJson success
+[2025-08-23 22:35:56.007] [multi_file_logger] [info] TCPKernel::getlinkfile json:%s
+[2025-08-23 22:35:56.007] [multi_file_logger] [info] downloadbyjson: head:{"downloadPath":"C:/Users/Lenovo/Desktop","fileId":112,"fileName":"Path.txt","totalFileSize":52,"type":34}
+[2025-08-23 22:35:56.010] [multi_file_logger] [info] downloadbyjson:body 发送分块id=1  大小=%52  偏移=0
+[2025-08-23 22:35:56.010] [multi_file_logger] [info] downloadbyjson:tail 文件id=112
+[2025-08-23 22:35:58.008] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:36:02.017] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:36:06.028] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:36:10.035] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:36:14.041] [multi_file_logger] [info] sock:820  _default_protocol_heartbeat_rq
+[2025-08-23 22:36:17.910] [multi_file_logger] [info] 应用程序正常退出，退出码：0
+[2025-08-23 22:53:38.921] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:53:38.921] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:53:38.921] [multi_file_logger] [info] redis 连接成功
+[2025-08-23 22:53:49.754] [multi_file_logger] [info] sock:824  _default_protocol_login_rq
+[2025-08-23 22:53:49.786] [multi_file_logger] [info] sock:824  _default_protocol_getfilelist_rq
+[2025-08-23 22:53:50.738] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:53:54.738] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:53:54.848] [multi_file_logger] [info] sock:824  _default_protocol_sharelink_rq
+[2025-08-23 22:53:54.850] [multi_file_logger] [info] storeFileInfoJson 插入成功！
+[2025-08-23 22:53:58.738] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:54:02.740] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] sock:824  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] link key:file:F4PG
+[2025-08-23 22:54:03.300] [multi_file_logger] [debug] res={"f_id":"108","f_path":"C:/mydisk/11/2204010728_周枭-生产实习记录.docx","link":"F4PG"}
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] 查询成功, json={"f_id":"108","f_path":"C:/mydisk/11/2204010728_周枭-生产实习记录.docx","link":"F4PG"}
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] TCPKernel::getlinkfile getFileInfoJson success
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] TCPKernel::getlinkfile json:%s
+[2025-08-23 22:54:03.300] [multi_file_logger] [info] downloadbyjson: head:{"downloadPath":"C:/Users/Lenovo/Desktop","fileId":108,"fileName":"2204010728_周枭-生产实习记录.docx","totalFileSize":29217,"type":34}
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] downloadbyjson:body 发送分块id=1  大小=%4096  偏移=0
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] downloadbyjson:body 发送分块id=2  大小=%4096  偏移=4096
+[2025-08-23 22:54:03.312] [multi_file_logger] [info] downloadbyjson:body 发送分块id=3  大小=%4096  偏移=8192
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] downloadbyjson:body 发送分块id=4  大小=%4096  偏移=12288
+[2025-08-23 22:54:03.320] [multi_file_logger] [info] downloadbyjson:body 发送分块id=5  大小=%4096  偏移=16384
+[2025-08-23 22:54:03.328] [multi_file_logger] [info] downloadbyjson:body 发送分块id=6  大小=%4096  偏移=20480
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] downloadbyjson:body 发送分块id=7  大小=%4096  偏移=24576
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] downloadbyjson:body 发送分块id=8  大小=%545  偏移=28672
+[2025-08-23 22:54:03.330] [multi_file_logger] [info] downloadbyjson:tail 文件id=108
+[2025-08-23 22:54:06.756] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:54:10.758] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:54:14.760] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:54:18.766] [multi_file_logger] [info] sock:824  _default_protocol_heartbeat_rq
+[2025-08-23 22:54:22.350] [multi_file_logger] [info] 应用程序正常退出，退出码：0
+[2025-08-23 22:56:40.980] [multi_file_logger] [info] 日志系统初始化完成
+[2025-08-23 22:56:40.980] [multi_file_logger] [info] 应用程序启动
+[2025-08-23 22:56:43.029] [multi_file_logger] [error] Redis连接失败
+[2025-08-23 22:56:49.174] [multi_file_logger] [info] sock:816  _default_protocol_login_rq
+[2025-08-23 22:56:49.199] [multi_file_logger] [info] sock:816  _default_protocol_getfilelist_rq
+[2025-08-23 22:56:49.972] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:56:53.976] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:56:57.979] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:01.988] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:02.280] [multi_file_logger] [info] sock:816  Jsondata :_default_protocol_getlink_rq
+[2025-08-23 22:57:02.280] [multi_file_logger] [info] link key:file:F4PG
+[2025-08-23 22:57:02.280] [multi_file_logger] [debug] res=
+[2025-08-23 22:57:02.280] [multi_file_logger] [error] 未查询到文件信息！
+[2025-08-23 22:57:02.280] [multi_file_logger] [error] TCPKernel::getlinkfile  getFileInfoJson fail
+[2025-08-23 22:57:02.280] [multi_file_logger] [info] downloadbyjson: head:{"downloadPath":"C:/Users/Lenovo/Desktop","fileId":108,"fileName":"2204010728_周枭-生产实习记录.docx","totalFileSize":29217,"type":34}
+[2025-08-23 22:57:02.292] [multi_file_logger] [info] downloadbyjson:body 发送分块id=1  大小=%4096  偏移=0
+[2025-08-23 22:57:02.292] [multi_file_logger] [info] downloadbyjson:body 发送分块id=2  大小=%4096  偏移=4096
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] downloadbyjson:body 发送分块id=3  大小=%4096  偏移=8192
+[2025-08-23 22:57:02.300] [multi_file_logger] [info] downloadbyjson:body 发送分块id=4  大小=%4096  偏移=12288
+[2025-08-23 22:57:02.306] [multi_file_logger] [info] downloadbyjson:body 发送分块id=5  大小=%4096  偏移=16384
+[2025-08-23 22:57:02.306] [multi_file_logger] [info] downloadbyjson:body 发送分块id=6  大小=%4096  偏移=20480
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] downloadbyjson:body 发送分块id=7  大小=%4096  偏移=24576
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] downloadbyjson:body 发送分块id=8  大小=%545  偏移=28672
+[2025-08-23 22:57:02.310] [multi_file_logger] [info] downloadbyjson:tail 文件id=108
+[2025-08-23 22:57:05.994] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:10.000] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:14.001] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:18.002] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:22.016] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:26.023] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:30.027] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:34.033] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:38.038] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:42.053] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:46.064] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:50.068] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:54.083] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:57:58.090] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
+[2025-08-23 22:58:02.090] [multi_file_logger] [info] sock:816  _default_protocol_heartbeat_rq
